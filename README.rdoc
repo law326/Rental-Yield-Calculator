@@ -15,3 +15,5 @@ This the coding challenge for Rentfiy.
  - Enter information and click calculate and result will be shown at the bottom
  - Go to http://localhost:3000/customers for the list of customers that system has collected
 
+= Online Demo
+ - http://henry-rentify-code-challenge.herokuapp.com/
