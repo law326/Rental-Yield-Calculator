@@ -1,0 +1,45 @@
+<%= form_for @property_info, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone_number, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :postcode, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :postcode, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rental_period_type_id, 'Rental Income Period:' %><br>
+    <div class="controls">
+      <%= f.label :rental_period_type_id_1, 'Monthly' %>
+      <%= f.radio_button :rental_period_type_id, 1 %>
+      <%= f.label :rental_period_type_id_2, 'Annual' %>
+      <%= f.radio_button :rental_period_type_id, 2 %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rent_income, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rent_income, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :property_cost, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :property_cost, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+  </div>
+<% end %>

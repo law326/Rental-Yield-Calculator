@@ -1,0 +1,37 @@
+<h1>Listing property_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Postcode</th>
+      <th>Rental period type</th>
+      <th>Rent income</th>
+      <th>Property cost</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @property_infos.each do |property_info| %>
+      <tr>
+        <td><%= property_info.email %></td>
+        <td><%= property_info.phone_number %></td>
+        <td><%= property_info.postcode %></td>
+        <td><%= property_info.rental_period_type_id %></td>
+        <td><%= property_info.rent_income %></td>
+        <td><%= property_info.property_cost %></td>
+        <td><%= link_to 'Show', property_info %></td>
+        <td><%= link_to 'Edit', edit_property_info_path(property_info) %></td>
+        <td><%= link_to 'Destroy', property_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Property info', new_property_info_path %>

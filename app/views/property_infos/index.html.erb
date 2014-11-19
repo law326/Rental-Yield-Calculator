@@ -1,0 +1,46 @@
+<%- model_class = PropertyInfo -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:phone_number) %></th>
+      <th><%= model_class.human_attribute_name(:postcode) %></th>
+      <th><%= model_class.human_attribute_name(:rental_period_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:rent_income) %></th>
+      <th><%= model_class.human_attribute_name(:property_cost) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @property_infos.each do |property_info| %>
+      <tr>
+        <td><%= link_to property_info.id, property_info_path(property_info) %></td>
+        <td><%= property_info.email %></td>
+        <td><%= property_info.phone_number %></td>
+        <td><%= property_info.postcode %></td>
+        <td><%= property_info.rental_period_type_id %></td>
+        <td><%= property_info.rent_income %></td>
+        <td><%= property_info.property_cost %></td>
+        <td><%=l property_info.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_property_info_path(property_info), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      property_info_path(property_info),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_property_info_path,
+            :class => 'btn btn-primary' %>

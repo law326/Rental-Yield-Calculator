@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  phone_number: MyString
+  postcode: MyString
+  rental_period_type_id: 1
+  rent_income: 1
+  property_cost: 1
+
+two:
+  email: MyString
+  phone_number: MyString
+  postcode: MyString
+  rental_period_type_id: 1
+  rent_income: 1
+  property_cost: 1

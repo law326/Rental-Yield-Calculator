@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @property_info.email %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @property_info.phone_number %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @property_info.postcode %>
+</p>
+
+<p>
+  <strong>Rental period type:</strong>
+  <%= @property_info.rental_period_type_id %>
+</p>
+
+<p>
+  <strong>Rent income:</strong>
+  <%= @property_info.rent_income %>
+</p>
+
+<p>
+  <strong>Property cost:</strong>
+  <%= @property_info.property_cost %>
+</p>
+
+<%= link_to 'Edit', edit_property_info_path(@property_info) %> |
+<%= link_to 'Back', property_infos_path %>

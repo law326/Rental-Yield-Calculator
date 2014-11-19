@@ -1,0 +1,44 @@
+<%= form_for(@property_info) do |f| %>
+  <% if @property_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@property_info.errors.count, "error") %> prohibited this property_info from being saved:</h2>
+
+      <ul>
+      <% @property_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br>
+    <%= f.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= f.label :postcode %><br>
+    <%= f.text_field :postcode %>
+  </div>
+  <div class="field">
+    <%= f.label :rental_period_type_id, 'Rental Income Period:' %><br>
+    <%= f.label :rental_period_type_id_1, 'Monthly' %>
+    <%= f.radio_button :rental_period_type_id, 1 %>
+    <%= f.label :rental_period_type_id_2, 'Annual' %>
+    <%= f.radio_button :rental_period_type_id, 2 %>
+  </div>
+  <div class="field">
+    <%= f.label :rent_income %><br>
+    £<%= f.text_field :rent_income %>
+  </div>
+  <div class="field">
+    <%= f.label :property_cost %><br>
+    £<%= f.text_field :property_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
