@@ -13,4 +13,4 @@ This the coding challenge for Rentfiy.
 = How to use it
  - The first page is the calculator page
  - Enter information and click calculate and result will be shown at the bottom
- - Go to http://localhost:3000/customers for the list of customers the system has collected
+ - Go to http://localhost:3000/customers for the list of customers that system has collected
