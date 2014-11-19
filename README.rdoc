@@ -17,3 +17,4 @@ This the coding challenge for Rentfiy.
 
 = Online Demo
  - http://henry-rentify-code-challenge.herokuapp.com/
+ - Customer list, please go to http://henry-rentify-code-challenge.herokuapp.com/customers
