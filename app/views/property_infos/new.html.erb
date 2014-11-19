@@ -1,5 +1,11 @@
-<%- model_class = PropertyInfo -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => model_class.model_name.human.titleize %></h1>
+  <h2>Rental Yield Calculator</h2>
 </div>
+
+<div class="hero-unit">
+  <h3>Hello!</h3>
+   Rental Yield is your annual rental income expressed as a percentage of your property value.<br>
+   This calculator can help you to compare yields from different properties in the market.<p />
+</div>
+
 <%= render :partial => 'form' %>

@@ -38,7 +38,14 @@ class PropertyInfosController < ApplicationController
   end
 
   def result
-    # @property_info = PropertyInfo.find(params[:id])
+    respond_to do |format|
+      if @property_info.rental_yield_calculation
+        format.html { @result = @property_info.rental_yield_calculation }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @property_info.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /property_infos/1
@@ -66,13 +73,13 @@ class PropertyInfosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_property_info
-      @property_info = PropertyInfo.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_property_info
+    @property_info = PropertyInfo.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def property_info_params
-      params.require(:property_info).permit(:email, :phone_number, :postcode, :rental_period_type_id, :rent_income, :property_cost)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def property_info_params
+    params.require(:property_info).permit(:email, :phone_number, :postcode, :rental_period_type_id, :rent_income, :property_cost)
+  end
 end

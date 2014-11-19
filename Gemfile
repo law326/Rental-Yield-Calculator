@@ -29,6 +29,10 @@ gem 'jbuilder', '~> 1.2'
 
 gem "twitter-bootstrap-rails"
 
+gem "better_errors"
+
+gem "binding_of_caller"
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

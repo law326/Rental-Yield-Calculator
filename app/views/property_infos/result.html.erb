@@ -1,3 +1,10 @@
+<div class="page-header">
+  <h2>Rental Yield Calculator</h2>
+</div>
+
 <%= render 'form' %>
 
-<%= @property_info.rental_yield_calculation %>%
+<div class="thumbnail">
+  <h3>Rental Yield Results</h3>
+  <p class="lead"><b>Expected Yield:</b> <%= @result %>%</p>
+</div>

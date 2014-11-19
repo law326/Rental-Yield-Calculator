@@ -1,6 +1,6 @@
 <%- model_class = PropertyInfo -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h2>Customers</h2>
 </div>
 <table class="table table-striped">
   <thead>
@@ -19,7 +19,7 @@
   <tbody>
     <% @property_infos.each do |property_info| %>
       <tr>
-        <td><%= link_to property_info.id, property_info_path(property_info) %></td>
+        <td><%= property_info.id %></td>
         <td><%= property_info.email %></td>
         <td><%= property_info.phone_number %></td>
         <td><%= property_info.postcode %></td>

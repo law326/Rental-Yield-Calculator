@@ -1,5 +1,9 @@
 Rentify::Application.routes.draw do
+
+  root :to => 'property_infos#new'
+
   resources :property_infos
+  get 'customers' => 'property_infos#index', as: 'customers'
   get 'property_infos/:id/result' => 'property_infos#result', as: 'result'
 
   # The priority is based upon order of creation: first created -> highest priority.

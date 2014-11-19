@@ -11,15 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141118214743) do
+ActiveRecord::Schema.define(version: 20141119094101) do
 
   create_table "property_infos", force: true do |t|
-    t.string   "email"
-    t.string   "phone_number"
-    t.string   "postcode"
-    t.integer  "rental_period_type_id"
-    t.integer  "rent_income"
-    t.integer  "property_cost"
+    t.string   "email",                 null: false
+    t.string   "phone_number",          null: false
+    t.string   "postcode",              null: false
+    t.integer  "rental_period_type_id", null: false
+    t.integer  "rent_income",           null: false
+    t.integer  "property_cost",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

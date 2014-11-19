@@ -1,4 +1,18 @@
 <%= form_for @property_info, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <% if @property_info && !@property_info.errors.empty? %>
+    <div class="alert alert-danger">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <ul>
+      <% @property_info.errors.full_messages.each do |msg| %>
+        <% if msg.is_a?(String) %>
+            <li><%= msg %></li>
+        <% end %>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
@@ -17,29 +31,40 @@
       <%= f.text_field :postcode, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :rental_period_type_id, 'Rental Income Period:' %><br>
-    <div class="controls">
-      <%= f.label :rental_period_type_id_1, 'Monthly' %>
-      <%= f.radio_button :rental_period_type_id, 1 %>
-      <%= f.label :rental_period_type_id_2, 'Annual' %>
-      <%= f.radio_button :rental_period_type_id, 2 %>
+
+
+  <div class="well">
+    <div class="control-group">
+      <%= f.label :rent_income, :class => 'control-label' %>
+      <div class="controls">
+        £ <%= f.text_field :rent_income, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :rent_income, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :rent_income, :class => 'text_field' %>
+    <div class="control-group">
+      <%= f.label :property_cost, :class => 'control-label' %>
+      <div class="controls">
+        £ <%= f.text_field :property_cost, :class => 'text_field' %>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :property_cost, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :property_cost, :class => 'text_field' %>
+
+    <div class="control-group">
+      <%= f.label :rental_period_type_id, 'Rental Income Period:' %>
+      <div class="controls">
+        <label class="checkbox inline">
+          <%= f.radio_button :rental_period_type_id, 1, :checked => true %>
+          Monthly
+        </label>
+        <label class="checkbox inline">
+          <%= f.radio_button :rental_period_type_id, 2 %>
+          Annual
+        </label>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit 'Calculate', :class => 'btn btn-primary' %>
     </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-  </div>
+
 <% end %>
